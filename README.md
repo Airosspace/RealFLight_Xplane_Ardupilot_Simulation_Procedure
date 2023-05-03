@@ -45,8 +45,7 @@ option then restart RealFlight. In RealFlight Evolution, press ESC, go to Settin
   - Select Simulation("My RealFlight" in Evolution), Import, RealFlight Archive (RFX, G3X) and select the file QuadcopterX downloaded above.  A message, "..was successfully imported" should be displayed
   - Select Aircraft (under "Fly" in Evolution), Select Aircraft, (open "Custom Aircraft" section in Realflight) and select "QuadcopterX-flightaxis".  In the current state, the RC inputs come straight from the stick so it is not flyable.
 
-  .. image:: images/realflight-select-aircraft.png
-    :target: _images/realflight-select-aircraft.png
+  ![plot](realflight-select-aircraft.png)
 
 From within RealFlight, Reduce graphics options to improve performance:
 
@@ -55,8 +54,7 @@ From within RealFlight, Reduce graphics options to improve performance:
   - Under "Hardware" set "Resolution" to "800 x 600 Medium(16 bit) and select "Full Screen" mode
   - Under "Physics" settings, change the option for "Pause Sim When in Background" to No, and "Automatic Reset Delay(sec)" to 2.0, and be sure RealFlight Link Enable is "Yes".
    
-  .. image:: images/realflight-settings-graphics.png
-    :target: _images/realflight-settings-graphics.png
+  ![plot](realflight-settings-graphics.png)
     
  .. note:: Under RealFlight's Simulation menu, Physics submenu, be sure its set at "Realistic" for best physics modeling and refresh rates.
 
@@ -73,8 +71,7 @@ For Evolution, you may be able to use the defaults since its graphics performanc
 
 .. note:: it is possible to simulate with your own custom code branch of ArduPilot. See :ref:`Mission Planner SITL with Custom Code<mp-sitl-custom-code>`.
 
-  .. image:: images/realflight-mp-sitl.jpg
-    :target: _images/realflight-mp-sitl.jpg
+  ![plot](realflight-mp-sitl.jpg)
 
 On the real-flight controller press the red "reset" button, or PC's space bar, to reset the vehicle's attitude and position and initialize the connection with SITL.
 
@@ -111,7 +108,7 @@ The simulation will begin using your code branch. Be sure to have the parameters
 
 This technique spreads the processing requirements between two PCs: one Windows machine running RealFlight and the physics/flight graphics, and another Linux PC or Linux VM running the SITL models. It also allows you to test and use locally generated code, rather than only the master branch, used by Mission Planner SITL.
 
-.. image:: images/dualPC-realflight.png
+![plot](dualPC-realflight.png)
 
 
 - best performance is obtained using a direct Gigabit Ethernet connection between machines.
@@ -149,15 +146,11 @@ To import one of these models:
   - on RealFlight select Simulation >> Import >> RealFlight Archive (RFX, G3X) and select the model you're interested in
   - select Aircraft >> Select Aircraft and select the model imported from the above step
 
-  .. image:: images/realflight-import-model.png
-    :width: 70%
-    :target: _images/realflight-import-model.png
+  ![plot](realflight-import-model.png)
 
   - from within SITL type ``param load <filename>``  to load the parameter found in the same directory as the model, as in the above example. You may have to load them again, after typing ``param fetch``, in order to load parameters that require enabling before presenting their parameter set.  And in some cases you may need to restart SITL in order for some parameters to take effect.
 
-  .. image:: images/realflight-import-parms.png
-    :width: 70%
-    :target: _images/realflight-import-parms.png
+  ![plot](realflight-import-parms.png)
 
 ##### OpenTX use with RealFlight and SITL
 
@@ -195,13 +188,11 @@ default). If using loopback (ie. 127.0.0.1) then you also need to make
 sure the "port that we send from" is not 49001. In the example below
 49002 is used.
 
-.. figure:: images/xplane-network-data.jpg
-   :target: _images/xplane-network-data.jpg
+![plot](images/xplane-network-data.jpg)
 
 You will also need to output data from X-Plane. Click on *Settings*, then *Data Input & Output*. Copy at least 1 setting from the screenshot below. ArudPilot will then send commands to X-Plane that will enable all of the output data fields that it needs to operate.
 
-.. figure:: images/mavlinkhil1.jpg
-   :target: _images/mavlinkhil1.jpg
+![plot](images/mavlinkhil1.jpg)
 
 If you have a joystick then you can configure the joystick for
 X-Plane. A joystick controlled by X-Plane will be available as R/C
@@ -213,8 +204,7 @@ should setup controls for roll, pitch, yaw and throttle. Note that
 X-Plane has an unusual throttle setup where the bar is fully to the
 left at full throttle and fully to the right at zero throttle.
 
-.. figure:: images/xplane-joystick-setup.jpg
-   :target: _images/xplane-joystick-setup.jpg
+![plot](images/xplane-joystick-setup.jpg)
 
 Right now you can't use the joystick for other than basic axes
 controls, so you can't use it for flight mode changes. We may be able
@@ -246,8 +236,7 @@ development.
 
 To start SITL directly from MissionPlanner go to the Simulation tab:
 
-.. figure:: images/xplane-missionplanner2.jpg
-   :target: _images/xplane-missionplanner2.jpg
+![plot](images/xplane-missionplanner2.jpg)
 
 In the Simulation screen you need to select Model "xplane" and then select
 "Plane". At the moment we only support fixed wing and helicopter
@@ -256,8 +245,7 @@ aircraft types. See below for more information on flying a helicopter.
 
 When you select "Plane" MissionPlanner will present a selection for downloading the current stable release or a nightly build of ArduPilot. 
 
-.. figure:: images/xplane-missionplanner3.jpg
-   :target: _images/xplane-missionplanner3.jpg
+![plot](images/xplane-missionplanner3.jpg)
 
 You then need to load an appropriate set of parameters for the
 aircraft (or setup the aircraft just like you would a real aircraft)
@@ -283,8 +271,7 @@ following commands::
   $ modules/waf/waf-light plane
   $ build/sitl/bin/arduplane --model xplane
 
-.. figure:: images/xplane-waf.jpg
-   :target: _images/xplane-waf.jpg
+![plot](images/xplane-waf.jpg)
 
 That will start SITL and wait for a GCS to connect. You should connect
 on TCP port 5760 and configure ArduPilot as usual.
@@ -341,14 +328,12 @@ position.
 
 See this example for typical joystick setup
 
-.. figure:: images/xplane-heli-joystick1.jpg
-   :target: _images/xplane-heli-joystick1.jpg
+![plot](images/xplane-heli-joystick1.jpg)
 
 and this one for mapping the generator on/off switch to a joystick
 switch
 
-.. figure:: images/xplane-heli-joystick2.jpg
-   :target: _images/xplane-heli-joystick2.jpg
+![plot](images/xplane-heli-joystick2.jpg)
 
 A full set of parameters for the Bell JetRanger Helicopter in X-Plane
 10/11 are available here http://uav.tridgell.net/XPlane/
