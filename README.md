@@ -45,7 +45,7 @@ option then restart RealFlight. In RealFlight Evolution, press ESC, go to Settin
   - Select Simulation("My RealFlight" in Evolution), Import, RealFlight Archive (RFX, G3X) and select the file QuadcopterX downloaded above.  A message, "..was successfully imported" should be displayed
   - Select Aircraft (under "Fly" in Evolution), Select Aircraft, (open "Custom Aircraft" section in Realflight) and select "QuadcopterX-flightaxis".  In the current state, the RC inputs come straight from the stick so it is not flyable.
 
-  ![plot](realflight-select-aircraft.png)
+  ![plot](images/realflight-select-aircraft.png)
 
 From within RealFlight, Reduce graphics options to improve performance:
 
@@ -54,7 +54,7 @@ From within RealFlight, Reduce graphics options to improve performance:
   - Under "Hardware" set "Resolution" to "800 x 600 Medium(16 bit) and select "Full Screen" mode
   - Under "Physics" settings, change the option for "Pause Sim When in Background" to No, and "Automatic Reset Delay(sec)" to 2.0, and be sure RealFlight Link Enable is "Yes".
    
-  ![plot](realflight-settings-graphics.png)
+  ![plot](images/realflight-settings-graphics.png)
     
  .. note:: Under RealFlight's Simulation menu, Physics submenu, be sure its set at "Realistic" for best physics modeling and refresh rates.
 
@@ -71,7 +71,7 @@ For Evolution, you may be able to use the defaults since its graphics performanc
 
 .. note:: it is possible to simulate with your own custom code branch of ArduPilot. See :ref:`Mission Planner SITL with Custom Code<mp-sitl-custom-code>`.
 
-  ![plot](realflight-mp-sitl.jpg)
+  ![plot](images/realflight-mp-sitl.jpg)
 
 On the real-flight controller press the red "reset" button, or PC's space bar, to reset the vehicle's attitude and position and initialize the connection with SITL.
 
@@ -108,7 +108,7 @@ The simulation will begin using your code branch. Be sure to have the parameters
 
 This technique spreads the processing requirements between two PCs: one Windows machine running RealFlight and the physics/flight graphics, and another Linux PC or Linux VM running the SITL models. It also allows you to test and use locally generated code, rather than only the master branch, used by Mission Planner SITL.
 
-![plot](dualPC-realflight.png)
+![plot](images/dualPC-realflight.png)
 
 
 - best performance is obtained using a direct Gigabit Ethernet connection between machines.
@@ -146,11 +146,11 @@ To import one of these models:
   - on RealFlight select Simulation >> Import >> RealFlight Archive (RFX, G3X) and select the model you're interested in
   - select Aircraft >> Select Aircraft and select the model imported from the above step
 
-  ![plot](realflight-import-model.png)
+  ![plot](images/realflight-import-model.png)
 
   - from within SITL type ``param load <filename>``  to load the parameter found in the same directory as the model, as in the above example. You may have to load them again, after typing ``param fetch``, in order to load parameters that require enabling before presenting their parameter set.  And in some cases you may need to restart SITL in order for some parameters to take effect.
 
-  ![plot](realflight-import-parms.png)
+  ![plot](images/realflight-import-parms.png)
 
 ##### OpenTX use with RealFlight and SITL
 
